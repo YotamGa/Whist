@@ -137,13 +137,13 @@ class Game{
     int gameID;
     int startingPlayer;
     public:
-        Game(int id, Player player1, Player player2, Player player3, Player player4) : players({player1,player2,player3,player4}){
+        Game(int id, Player player1, Player player2, Player player3, Player player4){
             gameID = id;
             gameDeck = Deck();
-            // players[0] = player1;
-            // players[1] = player2;
-            // players[2] = player3;
-            // players[3] = player4;
+            players[0] = player1;
+            players[1] = player2;
+            players[2] = player3;
+            players[3] = player4;
         }
         void newGame(){
             gameDeck.shuffleDeck();
