@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include "DeckOfCards.h"
 using namespace std;
 
 enum Suit {
@@ -96,6 +97,8 @@ class Deck {
 class Player {
     set<Card> hand;
     string playerName;
+    int playerID;
+    string password;
     int score;
     int tricks;
     public:
