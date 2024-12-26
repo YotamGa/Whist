@@ -19,7 +19,9 @@ void handleClient(SOCKET clientSocket, map<int, Game>& myGames, map<string, Play
     // Communicate with the client
     const char* welcomeMsg = "Welcome, enter your name: ";
     send(clientSocket, welcomeMsg, strlen(welcomeMsg), 0);
-
+    if ((bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0)) <= 0){
+        
+    }
     while ((bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0)) > 0) {
         cout << "Received: " << buffer << endl;
         if(string(buffer) == "next"){
@@ -37,7 +39,7 @@ void handleClient(SOCKET clientSocket, map<int, Game>& myGames, map<string, Play
     closesocket(clientSocket);
 }
 string* parseCommand(string command){
-    
+
 }
 // void doCommand(array<char,1024>& command){
 
